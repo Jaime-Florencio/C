@@ -1,4 +1,39 @@
 Aula 7.3 ( Passagem de Matrizes para Funções )
 Criando uma Jogo 'Batalha Naval'
 
+##########################################################################################
+
+#include <stdio.h>   // Entrada e saída padrão (printf, scanf)
+#include <stdlib.h>  // Biblioteca padrão (rand, srand, system)
+#include <time.h>    // Tempo (time)
+
+// protótipo da função
+void matriz(); // ? Corrigido com ponto e vírgula
+
+// Função Principal 
+int main(){
+	matriz();           // ? você chama a função, isso está certo
+
+	system("pause");    // ? mover antes do return
+	return 0;
+}
+
+// Definição da função
+void matriz(){
+	int i,j;
+	char campo[5][5]; // ? Agora você tem uma matriz para trabalhar
+
+
+	// Agora vamos imprimir
+	for( i=0 ; i<5 ; i++){
+		printf("---------------------\n");
+
+		for(j=0 ; j<5 ; j++){
+			printf("| 3%c ", campo[i][j]); // ? Agora sim você está acessando a matriz corretamente
+		}
+		printf("|\n"); // para fechar a linha da matriz
+	}
+	printf("---------------------\n");
+}
+
 
