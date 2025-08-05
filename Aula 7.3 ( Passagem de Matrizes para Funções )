@@ -2,38 +2,115 @@ Aula 7.3 ( Passagem de Matrizes para Funções )
 Criando uma Jogo 'Batalha Naval'
 
 ##########################################################################################
+// -------------------------------
+// PROTÓTIPOS DAS FUNÇÕES
+// -------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-#include <stdio.h>   // Entrada e saída padrão (printf, scanf)
-#include <stdlib.h>  // Biblioteca padrão (rand, srand, system)
-#include <time.h>    // Tempo (time)
+// Declaração (protótipo) das funções que serão definidas depois
+void imprimirfolha(char matriz[3][3]);
+void jogo(char campo[3][3]);
+int converte_coluna(char letra);
 
-// protótipo da função
-void matriz(); // ? Corrigido com ponto e vírgula
 
-// Função Principal 
-int main(){
-	matriz();           // ? você chama a função, isso está certo
+// -------------------------------
+// FUNÇÃO PRINCIPAL (main)
+// -------------------------------
+int main() {
+    char campo[3][3] = {
+        {' ', ' ', ' '},
+        {' ', ' ', ' '},
+        {' ', ' ', ' '}
+    };
 
-	system("pause");    // ? mover antes do return
-	return 0;
+    srand(time(NULL));  // Inicializa a aleatoriedade com base no tempo atual
+
+    // Sorteia 3 bombas aleatoriamente no campo
+    int bombas = 0;
+    while (bombas < 3) {
+        int x = rand() % 3;
+        int y = rand() % 3;
+
+        if (campo[x][y] == ' ') {
+            campo[x][y] = '@';
+            bombas++;
+        }
+    }
+
+    // Inicia o jogo passando o campo com as bombas
+    jogo(campo);
+    return 0;
 }
 
-// Definição da função
-void matriz(){
-	int i,j;
-	char campo[5][5]; // ? Agora você tem uma matriz para trabalhar
 
+// -------------------------------
+// DEFINIÇÃO DAS FUNÇÕES
+// -------------------------------
 
-	// Agora vamos imprimir
-	for( i=0 ; i<5 ; i++){
-		printf("---------------------\n");
-
-		for(j=0 ; j<5 ; j++){
-			printf("| 3%c ", campo[i][j]); // ? Agora sim você está acessando a matriz corretamente
-		}
-		printf("|\n"); // para fechar a linha da matriz
-	}
-	printf("---------------------\n");
+// Função que imprime a matriz visível (folha do jogador)
+void imprimirfolha(char matriz[3][3]) {
+    printf("     A    B    C  \n");
+    printf("   ----------------\n");
+    for (int i = 0; i < 3; i++) {
+        printf("%d |", i + 1);
+        for (int j = 0; j < 3; j++) {
+            printf("  %c  |", matriz[i][j]);
+        }
+        printf("\n");
+        printf("   ----------------\n");
+    }
 }
 
+// Função que converte a letra da coluna (A, B, C) para índice numérico (0, 1, 2)
+int converte_coluna(char letra) {
+    if (letra == 'A' || letra == 'a') return 0;
+    if (letra == 'B' || letra == 'b') return 1;
+    if (letra == 'C' || letra == 'c') return 2;
+    return -1; // Retorna -1 para letra inválida
+}
 
+// Função que controla o fluxo do jogo (entrada do jogador, lógica de acerto/erro, vidas)
+void jogo(char campo[3][3]) {
+    int vidas = 3;
+
+    // Cria a matriz visível que o jogador vai enxergar
+    char visivel[3][3] = {
+        {' ', ' ', ' '},
+        {' ', ' ', ' '},
+        {' ', ' ', ' '}
+    };
+
+    // Enquanto o jogador ainda tiver vidas...
+    while (vidas > 0) {
+        imprimirfolha(visivel);
+
+        int linha;
+        char letra_coluna;
+        printf("Digite a celula (ex: 2 A): ");
+        scanf(" %d %c", &linha, &letra_coluna);
+
+        int coluna = converte_coluna(letra_coluna);
+        linha = linha - 1;  // Ajusta linha para índice de matriz (0-2)
+
+        if (linha >= 0 && linha < 3 && coluna >= 0 && coluna < 3) {
+            if (campo[linha][coluna] == '@') {
+                printf("Bomba! Voce perdeu uma vida.\n");
+                visivel[linha][coluna] = '@';
+                vidas--;
+            } else {
+                printf("Agua! Voce esta seguro.\n");
+                visivel[linha][coluna] = 'O';
+            }
+        } else {
+            printf("Entrada invalida. Tente novamente.\n");
+        }
+
+        printf("Vidas restantes: %d\n", vidas);
+    }
+
+    printf("\nFim de jogo! Voce perdeu todas as vidas.\n");
+    printf("Campo real com bombas:\n");
+    imprimirfolha(campo);  // Mostra a matriz com as bombas reais
+}
