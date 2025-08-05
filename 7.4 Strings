@@ -1,0 +1,55 @@
+Anotacoes da Aula - Leitura de Strings com fgets()
+
+Objetivo da aula:
+Aprender como ler uma string (texto) do teclado em linguagem C, incluindo espacos, de forma segura.
+
+---cds
+
+1. Problema com scanf("%s", nome):
+
+* Le apenas ate o primeiro espaco em branco.
+* Se digitar "Jaime Florencio", ele so guarda "Jaime".
+
+2. Por que nao usar gets():
+
+* Le tudo ate o ENTER, incluindo espacos.
+* Mas e perigosa! Nao limita quantos caracteres vao ser lidos.
+* Pode ultrapassar o tamanho do vetor e causar erros graves.
+* Foi removida dos padroes modernos do C.
+
+3. Solucao correta: usar fgets()
+
+* Forma segura de ler textos do teclado, com limite de caracteres.
+
+Sintaxe:
+fgets(variavel, tamanho, stdin);
+
+Significado de cada parte:
+
+* variavel: onde sera guardado o texto digitado.
+* tamanho: quantos caracteres no maximo podem ser lidos (inclui o \0).
+* stdin: significa "entrada padrao", ou seja, o teclado.
+
+Exemplo pratico:
+char nome\[32];
+fgets(nome, 32, stdin);
+
+Observacao: Se o usuario apertar ENTER, o \n entra na string. Para retirar:
+for (int i = 0; nome\[i] != '\0'; i++) {
+if (nome\[i] == '\n') {
+nome\[i] = '\0';
+break;
+}
+}
+
+Resumo geral:
+
+| Funcao      | Le espacos? | Limita tamanho? | Segura? |
+| ----------- | ----------- | --------------- | ------- |
+| scanf("%s") | Nao         | Sim             | Sim     |
+| gets()      | Sim         | Nao             | Nao     |
+| fgets()     | Sim         | Sim             | Sim     |
+
+Conclusao:
+Sempre usar fgets() para ler textos com espaco de forma segura.
+Ele protege a memoria e e a forma moderna correta de capturar strings do teclado.
