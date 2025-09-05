@@ -1,20 +1,21 @@
-# 🖥️ Linguagem C
+# 📚 Linguagem C — Curso Definitivo
 
-Repositório com minhas anotações e práticas do curso de **Linguagem C**.  
-Cada aula contém um resumo em **Markdown** com os principais pontos estudados.
-
----
-
-## 📚 Índice de Aulas
-
-1. [Aula 7.3 – Passagem de Matrizes para Funções (Batalha Naval)](./Aula_7.3-Passagem-de-Matrizes-para-Funcoes.md)  
-2. [Aula 7.4 – Leitura de Strings com fgets()](./Aula_7.4-Strings(fgets).md)  
-3. [Aula 7.5 — Funções que Manipulam Strings](Aula_7.5-FuncoesStrings.md)
----
-
-## 📝 Resumos Gerais
-- (em breve)  
+Repositório de anotações e exemplos das aulas do curso de Linguagem C.  
+Cada aula está documentada em arquivos `.md` individuais para facilitar o estudo.
 
 ---
 
-✍️ **Observação:** conforme avanço no curso, vou adicionando as próximas aulas e resumos aqui.
+## 📂 Módulo 7 — Strings em C
+
+- [Aula 7.4 — Leitura de Strings com `fgets`](Aula_7.4-Strings(fgets).md)
+- [Aula 7.5 — Funções que Manipulam Strings](Aula_7.5-FuncoesStrings.md)
+
+---
+
+## 📂 Módulo 8 — Ponteiros
+
+- [Aula 8.0 — Ponteiros](Aula_8.0-Ponteiros.md)
+
+---
+
+## 📌 Observações
