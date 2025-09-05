@@ -1,7 +1,7 @@
 # 📚 Linguagem C – Aula 7.3  
 ## Passagem de Matrizes para Funções – Criando um Jogo "Batalha Naval"
 
-**📅 Data de estudo:** 05/09/2025  
+**📅 Data de estudo:** 05/08/2025  
 **📚 Tema:** Matrizes, Funções e Manipulação de Strings  
 
 ---
