@@ -1,2 +1,2 @@
-# Estudos---C
+# Linguagem---C
 Repositório para organizar meus estudos em Linguagem C.
