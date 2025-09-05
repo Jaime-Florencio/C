@@ -153,9 +153,3 @@ Isso evita **comportamento indefinido** (acessar lixo de memória).
 - Dominar ponteiros é essencial para avançar em **alocação dinâmica, vetores, strings, structs e funções**.
 
 ------------------------------------------------------------------------
-
-**Nome sugerido do arquivo:** `Aula_8.0-Ponteiros.md`\
-**Como linkar no README:**
-```
-- [Aula 8.0 — Ponteiros](Aula_8.0-Ponteiros.md)
-```
