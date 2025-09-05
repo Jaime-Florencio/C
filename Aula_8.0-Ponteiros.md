@@ -151,3 +151,5 @@ Isso evita **comportamento indefinido** (acessar lixo de memória).
 - São a razão de C ser chamada de **linguagem de médio nível**:  
   conseguem manipular tanto estruturas de alto nível quanto a memória bruta.  
 - Dominar ponteiros é essencial para avançar em **alocação dinâmica, vetores, strings, structs e funções**.
+
+------------------------------------------------------------------------
