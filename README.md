@@ -9,7 +9,7 @@ Cada aula contém um resumo em **Markdown** com os principais pontos estudados.
 
 1. [Aula 7.3 – Passagem de Matrizes para Funções (Batalha Naval)](./Aula_7.3-Passagem-de-Matrizes-para-Funcoes.md)  
 2. [Aula 7.4 – Leitura de Strings com fgets()](./Aula_7.4-Strings(fgets).md)  
-
+3. [Aula 7.5 — Funções que Manipulam Strings](Aula_7.5-FuncoesStrings.md)
 ---
 
 ## 📝 Resumos Gerais
