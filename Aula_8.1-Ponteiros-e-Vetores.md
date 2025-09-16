@@ -164,9 +164,3 @@ printf("%c\n", *ptr);  // imprime 'l' (primeiro caractere)
 - Em strings, o `'\0'` garante que funções como `printf("%s")` saibam onde parar.  
 
 ------------------------------------------------------------------------
-
-**Nome sugerido do arquivo:** `Aula_8.1-PonteirosVetores.md`\
-**Como linkar no README:**
-```
-- [Aula 8.1 — Ponteiros e Vetores](Aula_8.1-PonteirosVetores.md)
-```
