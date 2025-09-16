@@ -2,7 +2,7 @@
 
 ## Aritmética de Ponteiros
 
-**📅 Data de estudo:** 07/09/2025\
+**📅 Data de estudo:** 16/09/2025\
 **📚 Tema:** Operações de incremento, decremento, comparação e diferença entre ponteiros
 
 ------------------------------------------------------------------------
