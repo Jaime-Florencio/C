@@ -17,6 +17,7 @@ Cada aula está documentada em arquivos `.md` individuais para facilitar o estud
 
 - [Aula 8.0 — Ponteiros](Aula_8.0-Ponteiros.md)
 - [Aula 8.1 — Ponteiros e Vetores](Aula_8.1-Ponteiros-e-Vetores.md)
+- [Aula 8.2 — Aritmética de Ponteiros](Aula_8.2-AritmeticaPonteiros.md)
 
 ---
 
