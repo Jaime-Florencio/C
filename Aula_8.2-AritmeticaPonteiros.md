@@ -151,9 +151,3 @@ int main() {
 - Saber manipular ponteiros abre caminho para **vetores dinâmicos, estruturas e funções mais avançadas**.
 
 ------------------------------------------------------------------------
-
-**Nome sugerido do arquivo:** `Aula_8.2-AritmeticaPonteiros.md`\
-**Como linkar no README:**
-```
-- [Aula 8.2 — Aritmética de Ponteiros](Aula_8.2-AritmeticaPonteiros.md)
-```
