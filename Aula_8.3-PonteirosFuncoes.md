@@ -2,7 +2,7 @@
 
 ## Ponteiros para Funções
 
-**📅 Data de estudo:** 08/09/2025\
+**📅 Data de estudo:** 17/09/2025\
 **📚 Tema:** Passagem de vetores para funções e ponteiros para funções
 
 ------------------------------------------------------------------------
