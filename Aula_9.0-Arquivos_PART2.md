@@ -1,7 +1,5 @@
 # Arquivos Binários em C
 ## Módulo 9 — Aula 2
-Curso: Linguagem C – O Curso Definitivo WR Kits  
-Autor: Dr. Eng. Wagner Rambo  
 
 ---
 
