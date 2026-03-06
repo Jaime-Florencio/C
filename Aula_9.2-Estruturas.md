@@ -514,7 +514,7 @@ Isso vale para:
 Primeiro você organiza os dados.
 
 
-# EXTRAS:
+# EXTRA:
 # Operador Seta (->) em Estruturas
 
 ## 1. Ideia principal
