@@ -1,4 +1,4 @@
-# Estruturas em C — Explicação Prática (Estilo Paulo Freire)
+# Estruturas em C — Explicação Prática 
 
 ## 1. Primeiro vamos pensar no problema
 
