@@ -1,4 +1,4 @@
-# Estruturas em C — Explicação Prática 
+# Estruturas em C — Explicação Prática
 
 ## 1. Primeiro vamos pensar no problema
 
@@ -16,11 +16,13 @@ Cada cliente possui:
 
 Agora imagine tentar guardar isso em variáveis separadas:
 
+```c
 char nome[30];
 char endereco[40];
 char cidade[30];
 char telefone[11];
 int cep;
+```
 
 Funciona.
 
@@ -48,6 +50,7 @@ Uma struct é uma forma de agrupar variáveis diferentes em um único tipo de da
 
 Exemplo:
 
+```c
 struct cliente
 {
     char nome[30];
@@ -56,6 +59,7 @@ struct cliente
     char telefone[11];
     int cep;
 };
+```
 
 Aqui criamos um modelo de cliente.
 
@@ -67,21 +71,27 @@ Ainda não criamos um cliente, apenas o molde.
 
 Agora precisamos criar um cliente real usando o molde.
 
+```c
 struct cliente infos;
+```
 
 Agora existe um cliente chamado infos.
 
 Ele tem dentro dele:
 
-infos.nome  
-infos.endereco  
-infos.cidade  
-infos.telefone  
-infos.cep  
+```
+infos.nome
+infos.endereco
+infos.cidade
+infos.telefone
+infos.cep
+```
 
 Perceba a lógica:
 
+```
 variavel_da_struct.membro
+```
 
 Isso usa o operador ponto (.).
 
@@ -91,21 +101,25 @@ Isso usa o operador ponto (.).
 
 Agora vamos preencher os dados.
 
+```c
 gets(infos.nome);
 gets(infos.endereco);
 gets(infos.cidade);
 gets(infos.telefone);
 scanf("%d",&infos.cep);
+```
 
 Aqui estamos colocando dados dentro da estrutura.
 
 Depois podemos imprimir:
 
+```c
 printf("%s", infos.nome);
 printf("%s", infos.endereco);
 printf("%s", infos.cidade);
 printf("%s", infos.telefone);
 printf("%d", infos.cep);
+```
 
 ---
 
@@ -135,7 +149,9 @@ Você pode pegar um elemento da estrutura e enviar para uma função.
 
 Exemplo:
 
+```c
 f_test(charlie.alpha);
+```
 
 Aqui estamos passando apenas um membro da estrutura.
 
@@ -149,7 +165,9 @@ Se quisermos modificar o valor dentro da função, usamos ponteiro.
 
 Exemplo:
 
+```c
 func(&charlie.bravo);
+```
 
 Aqui passamos o endereço da variável.
 
@@ -163,10 +181,12 @@ Também podemos passar a estrutura inteira para uma função.
 
 Exemplo:
 
+```c
 void f1(struct clock var)
 {
     printf("%d", var.hours);
 }
+```
 
 A função recebe uma cópia da estrutura.
 
@@ -182,15 +202,21 @@ Podemos criar ponteiros para estruturas.
 
 Exemplo:
 
+```c
 struct drinks *cheers;
+```
 
 Isso significa:
 
-cheers aponta para uma estrutura drinks.
+```
+cheers aponta para uma estrutura drinks
+```
 
 Depois fazemos:
 
+```c
 cheers = &open_bar;
+```
 
 Agora o ponteiro aponta para a estrutura.
 
@@ -202,19 +228,25 @@ Existem duas formas.
 
 Forma difícil:
 
+```c
 (*cheers).margarita
+```
 
 Funciona, mas é confusa.
 
 Forma correta:
 
+```c
 cheers->margarita
+```
 
-Esse operador -> é chamado de operador seta.
+Esse operador `->` é chamado de operador seta.
 
 Ele significa:
 
-acessar membro através de ponteiro.
+```
+acessar membro através de ponteiro
+```
 
 ---
 
@@ -224,13 +256,17 @@ Porque é mais eficiente.
 
 Se você passar uma struct grande para uma função:
 
+```c
 struct gigante
+```
 
 O computador precisa copiar toda a estrutura.
 
 Se usar ponteiro:
 
+```c
 struct gigante *
+```
 
 Ele passa apenas o endereço na memória.
 
@@ -246,23 +282,31 @@ A union é parecida com struct, mas funciona diferente.
 
 Struct:
 
-cada variável tem seu espaço na memória.
+```
+cada variável tem seu espaço na memória
+```
 
 Union:
 
-todas compartilham o mesmo espaço.
+```
+todas compartilham o mesmo espaço
+```
 
 Exemplo:
 
+```c
 union teste
 {
     short val1;
     char val2;
 };
+```
 
 Aqui:
 
-val1 e val2 usam o mesmo endereço.
+```
+val1 e val2 usam o mesmo endereço
+```
 
 Ou seja:
 
@@ -290,10 +334,12 @@ Agora imagine o seguinte.
 
 Você quer representar carros:
 
-ford  
-honda  
-volks  
-renault  
+```
+ford
+honda
+volks
+renault
+```
 
 Poderia usar números.
 
@@ -301,6 +347,7 @@ Mas isso é confuso.
 
 Então usamos enum.
 
+```c
 enum carros
 {
     ford,
@@ -308,13 +355,16 @@ enum carros
     volks,
     renault
 };
+```
 
 Automaticamente:
 
-ford = 0  
-honda = 1  
-volks = 2  
-renault = 3  
+```
+ford = 0
+honda = 1
+volks = 2
+renault = 3
+```
 
 Isso deixa o código mais legível.
 
@@ -324,21 +374,29 @@ Isso deixa o código mais legível.
 
 Agora imagine que você usa muito:
 
+```
 float
+```
 
-Mas quer chamar de reais.
+Mas quer chamar de **reais**.
 
 Pode fazer:
 
+```c
 typedef float reais;
+```
 
 Agora:
 
+```c
 reais valor;
+```
 
 É o mesmo que:
 
+```c
 float valor;
+```
 
 Isso não cria um tipo novo, apenas um apelido.
 
@@ -350,18 +408,24 @@ Isso é muito comum.
 
 Em vez de escrever:
 
+```c
 struct cliente pessoa;
+```
 
 Podemos fazer:
 
+```c
 typedef struct
 {
     char nome[30];
 } cliente;
+```
 
 Agora basta:
 
+```c
 cliente pessoa;
+```
 
 Muito mais limpo.
 
@@ -369,30 +433,34 @@ Muito mais limpo.
 
 # 17. Resumo geral
 
-Struct
+## Struct
 
 Agrupa várias variáveis relacionadas.
 
 Exemplo:
 
-cliente  
-    nome  
-    endereço  
-    telefone  
+```
+cliente
+    nome
+    endereço
+    telefone
+```
 
 ---
 
-Ponteiro de struct
+## Ponteiro de struct
 
 Permite acessar struct de forma eficiente.
 
 Operador usado:
 
+```
 ->
+```
 
 ---
 
-Union
+## Union
 
 Várias variáveis compartilham a mesma memória.
 
@@ -403,23 +471,27 @@ Usado para:
 
 ---
 
-Enum
+## Enum
 
 Define conjunto de constantes inteiras.
 
 Exemplo:
 
+```c
 enum estados
+```
 
 ---
 
-Typedef
+## Typedef
 
 Cria apelido para tipos.
 
 Exemplo:
 
+```c
 typedef float reais;
+```
 
 ---
 
