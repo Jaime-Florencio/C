@@ -231,17 +231,6 @@ Este guia foi baseado no material do curso de C do Wagner Rambo (operações bit
 
 ---
 
-# 🧠 Dica final (importante)
-
-Se você domina isso, você sai de:
-
-👉 "programador comum"
-
-para:
-
-🔥 "engenheiro de firmware de verdade"
-
----
 
 # ✍️ Autor
 
